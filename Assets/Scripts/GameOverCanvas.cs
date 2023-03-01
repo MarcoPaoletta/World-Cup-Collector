@@ -14,7 +14,6 @@ public class GameOverCanvas : MonoBehaviour
 
     private void Start()
     {
-        GameManager.LoadData();
         cupsText.text = "CUPS: " + playerScript.score.ToString();
         SetTimeText();
         levelText.text = "LEVEL: " + TrophiesSpawner.level.ToString();

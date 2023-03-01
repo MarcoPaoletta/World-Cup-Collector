@@ -64,16 +64,25 @@ public class Player : MonoBehaviour
         speed = 3.75f;
         particlesOn = PlayerPrefs.GetString("ParticlesStatus") == "On";
 
+        LoadData();
+        SetSkin();
+        SetSpeed();
+        SetResistance();
+        CheckBoosts();
+    }
+
+    private void LoadData()
+    {
         if(SaveManager.LoadShopManagerData() != null)
         {
             ShopManager.LoadData();
             ShopManager.skinsBought.Add(1);
         }
 
-        SetSkin();
-        SetSpeed();
-        SetResistance();
-        CheckBoosts();
+        if(SaveManager.LoadGameManagerData() != null)
+        {
+            GameManager.LoadData();
+        }
     }
 
     private void SetSkin()
