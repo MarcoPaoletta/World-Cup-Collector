@@ -165,6 +165,38 @@ public class Player : MonoBehaviour
     {
         Move();
         Animate();
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            trophiesCollected = 0;
+            healthBarScript.health = 100f;
+            TrophiesSpawner.level += 1;
+            scoreTextsCanvasScript.UpdateLevelText();
+            scoreTextsCanvasScript.LevelCompleted();
+            inventoryItemsSpawnerScript.CheckSpawnInventoryItems();
+
+            foreach(var trophy in GameObject.FindGameObjectsWithTag("Trophy"))
+            {
+                Destroy(trophy);
+            }
+
+            trophiesSpawnerScript.SpawnTrophies();
+
+            if(TrophiesSpawner.level >= 16 && !obstaclesOn)
+            {
+                obstaclesOn = true;
+            }
+
+            if(obstaclesOn == true)
+            {
+                obstaclesSpawnerScript.SpawnObstacles();
+            }
+
+            if(particlesOn)
+            {
+                confettiScript.LaunchConfetti();
+            }
+        }
     }
 
     public void SetPlayedSeconds()
