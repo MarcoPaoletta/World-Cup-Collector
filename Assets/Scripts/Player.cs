@@ -24,12 +24,12 @@ public class Player : MonoBehaviour
     [Header("GameObjects")]
     [SerializeField] private GameObject trophy;
     [SerializeField] private GameObject GameOverCanvas;
+    [SerializeField] private GameObject fitToThis;
 
     [Header("Upgrades")]
     [SerializeField] private List<float> speeds;
 
     [Header("AudioClips")]
-    [SerializeField] private AudioClip borderSXF;
     [SerializeField] private AudioClip trophySFX;
     [SerializeField] private AudioClip deathSFX;
     [SerializeField] private AudioClip movementSFX;
@@ -55,6 +55,13 @@ public class Player : MonoBehaviour
     private float resistance;
     private float verticalMovement;
     private float horizontalMovement;
+    private float minPositionX;
+    private float maxPositionX;
+    private float minPositionY;
+    private float maxPositionY;
+    private float spriteXDifference = 0.05956841f;
+    private float spriteYDifference = 0.0346145f;
+
 
     #region Start
 
@@ -69,6 +76,7 @@ public class Player : MonoBehaviour
         SetSpeed();
         SetResistance();
         CheckBoosts();
+        SetMinAndMaxPositions();
     }
 
     private void LoadData()
@@ -141,6 +149,14 @@ public class Player : MonoBehaviour
         SaveManager.SaveShopManagerData();
     }
 
+    private void SetMinAndMaxPositions()
+    {
+        minPositionX = fitToThis.transform.localScale.x / -2 + spriteRenderer.size.x + spriteXDifference;
+        maxPositionX = fitToThis.transform.localScale.x / 2 - spriteRenderer.size.x - spriteXDifference;
+        minPositionY = fitToThis.transform.localScale.y / -2 + spriteRenderer.size.y + spriteYDifference;
+        maxPositionY = fitToThis.transform.localScale.y / 2 - spriteRenderer.size.y - spriteYDifference;
+    }
+
     #endregion
 
     #region Update
@@ -169,6 +185,7 @@ public class Player : MonoBehaviour
         if(canMove)
         {
             transform.position += (Vector3)moveInput * speed * Time.deltaTime;
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, minPositionX, maxPositionX), Mathf.Clamp(transform.position.y, minPositionY, maxPositionY), transform.position.z);
         }
     }
 
@@ -179,27 +196,27 @@ public class Player : MonoBehaviour
             if(swipe != swipeDirection)
             {
                 AudioManager.instance.PlaySFX(movementSFX);
-            }
 
-            if(swipe == "Left")
-            {
-                moveInput = Vector2.left;
-                swipeDirection = "Left";
-            }        
-            if(swipe == "Right")
-            {
-                moveInput = Vector2.right;
-                swipeDirection = "Right";
-            }        
-            if(swipe == "Up")
-            {
-                moveInput = Vector2.up;
-                swipeDirection = "Up";
-            }        
-            if(swipe == "Down")
-            {
-                moveInput = Vector2.down;
-                swipeDirection = "Down";
+                if(swipe == "Left")
+                {
+                    moveInput = Vector2.left;
+                    swipeDirection = "Left";
+                }        
+                if(swipe == "Right")
+                {
+                    moveInput = Vector2.right;
+                    swipeDirection = "Right";
+                }        
+                if(swipe == "Up")
+                {
+                    moveInput = Vector2.up;
+                    swipeDirection = "Up";
+                }        
+                if(swipe == "Down")
+                {
+                    moveInput = Vector2.down;
+                    swipeDirection = "Down";
+                }
             }
         }
     }
@@ -273,22 +290,7 @@ public class Player : MonoBehaviour
             {
                 scoreTextsCanvasScript.Scored();
             }
-        }      
-
-        if(other.gameObject.CompareTag("FitToThis"))
-        {
-            AudioManager.instance.PlaySFX(borderSXF);
-
-            if(swipeDirection == "Left" || swipeDirection == "Right")
-            {
-                moveInput.x *= -1;
-            }
-
-            if(swipeDirection == "Up" || swipeDirection == "Down")
-            {
-                moveInput.y *= -1;
-            }
-        }  
+        }       
 
         if(other.CompareTag("Mud"))
         {

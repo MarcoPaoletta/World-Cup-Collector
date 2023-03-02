@@ -541,6 +541,7 @@ MonoBehaviour:
   boxCollider: {fileID: 210433762}
   trophy: {fileID: 4130877854301039729, guid: 4de5924bded20004989bbb1229f97e7e, type: 3}
   GameOverCanvas: {fileID: 1061016644}
+  fitToThis: {fileID: 4273402282558970824}
   speeds:
   - 3.75
   - 3.9
@@ -12932,58 +12933,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_ColliderPaths.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_CompositePaths.m_Paths.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].x
-      value: 2.499971
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[1].x
-      value: 2.499971
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[2].x
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[3].x
-      value: -2.499971
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[0].X
-      value: -25000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[1].X
-      value: -25000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[2].X
-      value: 25000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598514, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[3].X
-      value: 25000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598515, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273402283968598515, guid: aca528600c953864c9332132796a19de, type: 3}
-      propertyPath: m_UsedByComposite
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4273402283968598516, guid: aca528600c953864c9332132796a19de, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13034,3 +12983,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca528600c953864c9332132796a19de, type: 3}
+--- !u!1 &4273402282558970824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4273402283968598519, guid: aca528600c953864c9332132796a19de, type: 3}
+  m_PrefabInstance: {fileID: 4273402282558970823}
+  m_PrefabAsset: {fileID: 0}
