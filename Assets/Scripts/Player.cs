@@ -261,7 +261,7 @@ public class Player : MonoBehaviour
             AnalyticsManager.IncreaseTotalTrophies(1 * trophiesMultiplier);
             scoreTextsCanvasScript.UpdateScoreText(score);
             
-            if(trophiesCollected == TrophiesSpawner.level)
+            if(trophiesCollected == TrophiesSpawner.level || trophiesCollected == 30)
             {
                 trophiesCollected = 0;
                 healthBarScript.health = 100f;
