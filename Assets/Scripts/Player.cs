@@ -5,6 +5,10 @@ using UnityEngine.U2D.Animation;
 
 public class Player : MonoBehaviour
 {
+    public static bool gamePaused;
+    public static bool dead;
+    public static bool frozen;
+
     [HideInInspector] public bool canMove;
     [HideInInspector] public bool canAddPlayingSeconds;
     [HideInInspector] public float speed;
@@ -43,6 +47,7 @@ public class Player : MonoBehaviour
     [SerializeField] private ObstaclesSpawner obstaclesSpawnerScript;
     [SerializeField] private SnowExplosion snowExplosionScript;
     [SerializeField] private InventoryItemsSpawner inventoryItemsSpawnerScript;
+    [SerializeField] private PauseButtonCanvas pauseButtonCanvasScript;
 
     private Vector2 moveInput;
     private string swipeDirection;
@@ -61,7 +66,6 @@ public class Player : MonoBehaviour
     private float maxPositionY;
     private float spriteXDifference = 0.05956841f;
     private float spriteYDifference = 0.0346145f;
-
 
     #region Start
 
@@ -164,6 +168,7 @@ public class Player : MonoBehaviour
     private void Update() 
     {
         Move();
+        SetAnimatorStatus();
         Animate();
     }
 
@@ -182,7 +187,7 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        if(canMove)
+        if(canMove && !gamePaused)
         {
             transform.position += (Vector3)moveInput * speed * Time.deltaTime;
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, minPositionX, maxPositionX), Mathf.Clamp(transform.position.y, minPositionY, maxPositionY), transform.position.z);
@@ -191,7 +196,7 @@ public class Player : MonoBehaviour
 
     private void OnSwipe(string swipe)
     {
-        if(canMove)
+        if(canMove && !gamePaused)
         {
             if(swipe != swipeDirection)
             {
@@ -219,6 +224,11 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void SetAnimatorStatus()
+    {
+        animator.enabled = !gamePaused;
     }
 
     #endregion
@@ -309,6 +319,7 @@ public class Player : MonoBehaviour
             Color frozenColor;
             ColorUtility.TryParseHtmlString("#00AEE0", out frozenColor);
             spriteRenderer.color = frozenColor;
+            frozen = true;
             Invoke("Defrost", 1.2f);
         }
 
@@ -332,6 +343,7 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("Frozen", false);
         canMove = true;
+        frozen = false;
         spriteRenderer.color = Color.white;
     }
 
@@ -357,6 +369,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Dead", true);
         spriteRenderer.color = Color.white;
         ApplyDeathImpulse();
+        dead = true;
         Invoke("ShowGameOverCanvas", 2);
     }
 

@@ -36,7 +36,7 @@ public class HealthBar : MonoBehaviour
 
     private void DecreaseHealth()
     {
-        if(health > 0 && playerScript.canMove || isPlayerFrozen())
+        if(!Player.gamePaused && health > 0 && playerScript.canMove || isPlayerFrozen())
         {
             sun.fillAmount = health / maxHealth;
             health -= (9f - clockDuration) * Time.deltaTime;

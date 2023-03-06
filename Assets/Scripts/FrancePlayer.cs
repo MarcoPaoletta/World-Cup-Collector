@@ -57,10 +57,17 @@ public class FrancePlayer : MonoBehaviour
 
     private void Update()
     {
-        if(canMove)
+        if(canMove && !Player.gamePaused)
         {
             transform.position += (Vector3)moveInput * speed * Time.deltaTime;
         }
+
+        SetAnimatorStatus();
+    }
+
+    private void SetAnimatorStatus()
+    {
+        animator.enabled = !Player.gamePaused;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
