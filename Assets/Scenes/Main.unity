@@ -7767,6 +7767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuCanvas: {fileID: 1504954769}
+  pauseButtonCanvasScript: {fileID: 888019239}
 --- !u!4 &1304893625
 Transform:
   m_ObjectHideFlags: 0
