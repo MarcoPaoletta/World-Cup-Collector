@@ -73,6 +73,9 @@ public class Player : MonoBehaviour
     {
         swipeListenerScript.OnSwipe.AddListener(OnSwipe);
         speed = 3.75f;
+        gamePaused = false;
+        dead = false;
+        frozen = false;
         particlesOn = PlayerPrefs.GetString("ParticlesStatus") == "On";
 
         LoadData();

@@ -9,8 +9,12 @@ public class ApplicationQuitManager : MonoBehaviour
 
     void OnApplicationFocus(bool focusStatus)
     {
-        pauseMenuCanvas.SetActive(true);
-        Player.gamePaused = true;
+        if(!Player.dead)
+        {
+            pauseMenuCanvas.SetActive(true);
+            Player.gamePaused = true;
+        }
+        
         pauseButtonCanvasScript.pauseButtonEnabled = true;
     }
 }
