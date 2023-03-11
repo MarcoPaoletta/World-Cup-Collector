@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        if(canMove && !gamePaused)
+        if(canMove && !gamePaused && !dead)
         {
             transform.position += (Vector3)moveInput * speed * Time.deltaTime;
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, minPositionX, maxPositionX), Mathf.Clamp(transform.position.y, minPositionY, maxPositionY), transform.position.z);
@@ -196,7 +196,7 @@ public class Player : MonoBehaviour
 
     private void OnSwipe(string swipe)
     {
-        if(canMove && !gamePaused)
+        if(canMove && !gamePaused && !dead)
         {
             if(swipe != swipeDirection)
             {
@@ -370,6 +370,7 @@ public class Player : MonoBehaviour
         spriteRenderer.color = Color.white;
         ApplyDeathImpulse();
         dead = true;
+        frozen = false;
         Invoke("ShowGameOverCanvas", 2);
     }
 
