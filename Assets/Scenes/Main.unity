@@ -13547,18 +13547,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1372176896775737108, guid: 424f9c78e18909343aed806f7b71a0d9, type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372176896775737108, guid: 424f9c78e18909343aed806f7b71a0d9, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.87843144
-      objectReference: {fileID: 0}
-    - target: {fileID: 1372176896775737108, guid: 424f9c78e18909343aed806f7b71a0d9, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.45882356
-      objectReference: {fileID: 0}
     - target: {fileID: 1372176896775737111, guid: 424f9c78e18909343aed806f7b71a0d9, type: 3}
       propertyPath: m_Name
       value: Main Camera
