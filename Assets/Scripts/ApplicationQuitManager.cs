@@ -5,6 +5,7 @@ using UnityEngine;
 public class ApplicationQuitManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuCanvas;
+    [SerializeField] private GameObject blackPanelGamePausedCanvas;
     [SerializeField] private PauseButtonCanvas pauseButtonCanvasScript;
 
     void OnApplicationFocus(bool focusStatus)
@@ -12,6 +13,7 @@ public class ApplicationQuitManager : MonoBehaviour
         if(!Player.dead)
         {
             pauseMenuCanvas.SetActive(true);
+            blackPanelGamePausedCanvas.SetActive(true);
             Player.gamePaused = true;
         }
         

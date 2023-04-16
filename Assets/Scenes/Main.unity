@@ -8333,6 +8333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuCanvas: {fileID: 1219112693}
+  blackPanelGamePausedCanvas: {fileID: 1906096476}
   pauseButtonCanvasScript: {fileID: 888019239}
 --- !u!4 &1304893625
 Transform:
