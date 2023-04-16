@@ -48,6 +48,11 @@ public class BuyButton : MonoBehaviour
         }
 
         SetAmountText();
+
+        if(amountText != null)
+        {
+            boostScript.CheckMaxBoostAmount();
+        }
     }
 
     private void AssignVariables()
