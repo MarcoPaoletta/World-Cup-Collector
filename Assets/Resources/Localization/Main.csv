@@ -1,0 +1,11 @@
+Key,English,Spanish
+ScoreTextsCanvas.ScoreText,Cups,Copas
+ScoreTextsCanvas.LevelText,Level,Nivel
+SwipeText,Swipe!,Desliza!
+PausedText,Paused,Pausa
+GameOverCanvas.GameOverText,Game over,Perdiste
+GameOverCanvas.CupsText,Cups,Copas
+GameOverCanvas.TimeText,Time,Tiempo
+GameOverCanvas.LevelText,Level,Nivel
+GameOverCanvas.BestLevelText,Best level,Maximo nivel
+GameOverCanvas.TotalCupsText,Total cups,Copas totales

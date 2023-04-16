@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.SimpleLocalization;
 
 public class GameOverCanvas : MonoBehaviour
 {
@@ -12,21 +13,42 @@ public class GameOverCanvas : MonoBehaviour
     [SerializeField] private Text bestLevelText;
     [SerializeField] private Text totalCupsText;
 
+    private string cupsTextTranslation;
+    private string timeTextTranslation;
+    private string levelTextTranslation;
+    private string bestLevelTextTranslation;
+    private string totalCupsTextTranslation;
+
     private void Start()
     {
-        cupsText.text = "CUPS: " + playerScript.score.ToString();
+        SetTranslations();
+        SetTexts();
+    }
+
+    private void SetTranslations()
+    {
+        cupsTextTranslation = LocalizationManager.Localize("GameOverCanvas.CupsText");
+        timeTextTranslation = LocalizationManager.Localize("GameOverCanvas.TimeText");
+        levelTextTranslation = LocalizationManager.Localize("GameOverCanvas.LevelText");
+        bestLevelTextTranslation = LocalizationManager.Localize("GameOverCanvas.BestLevelText");
+        totalCupsTextTranslation = LocalizationManager.Localize("GameOverCanvas.TotalCupsText");
+    }
+
+    private void SetTexts()
+    {
+        cupsText.text = cupsTextTranslation + ": " + playerScript.score.ToString();
         SetTimeText();
-        levelText.text = "LEVEL: " + TrophiesSpawner.level.ToString();
+        levelText.text = levelTextTranslation + ": " + TrophiesSpawner.level.ToString();
         SetBestLevel();
-        bestLevelText.text = "BEST LEVEL: " + GameManager.bestLevel.ToString();
-        totalCupsText.text = "TOTAL CUPS: " + GameManager.cups.ToString();
+        bestLevelText.text = bestLevelTextTranslation + ": " + GameManager.bestLevel.ToString();
+        totalCupsText.text = totalCupsTextTranslation + ": " + GameManager.cups.ToString();
     }
 
     private void SetTimeText()
     {
         int minutesPlayed = playerScript.totalSecondsPlayed / 60;
         int secondsPlayed = playerScript.totalSecondsPlayed - 60 * minutesPlayed;
-        timeText.text = "TIME: " + minutesPlayed.ToString() + "' " + secondsPlayed.ToString() + "''";
+        timeText.text = timeTextTranslation + ": " + minutesPlayed.ToString() + "' " + secondsPlayed.ToString() + "''";
     }
 
     private void SetBestLevel()

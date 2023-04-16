@@ -27,7 +27,7 @@ public class Upgrade : MonoBehaviour
         if(image.sprite == upgradesSprites[4])
         {
             buyButton.interactable = false;
-            buyButtonText.text = "max";
+            buyButtonText.text = "full";
         }
     }
 }

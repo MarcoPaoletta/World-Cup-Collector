@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 71642604}
   - component: {fileID: 71642603}
   m_Layer: 5
-  m_Name: Title
+  m_Name: AnalyticsTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +687,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &992738804
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -704,7 +704,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &992738805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,6 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10cf49b4d90ea942a53e8f77bf7abbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  analyticsTitleText: {fileID: 71642605}
   totalTrophiesText: {fileID: 803210898}
   totalTimeText: {fileID: 1296320680}
   matchesPlayedText: {fileID: 694484002}

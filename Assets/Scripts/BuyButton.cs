@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Assets.SimpleLocalization;
 
 public class BuyButton : MonoBehaviour
 {   
@@ -27,6 +28,8 @@ public class BuyButton : MonoBehaviour
     private Color normalButtonColor;
     private Color selectedButtonColor;
     private Color boughtButtonColor;
+    private string pickedSkinText;
+    private string boughtSkinText;
 
     #region Start
 
@@ -52,6 +55,8 @@ public class BuyButton : MonoBehaviour
         button = GetComponent<Button>();
         buttonImage = GetComponent<Image>();
         buttonText = GetComponentInChildren<Text>();
+        pickedSkinText = LocalizationManager.Localize("PickedSkin");
+        boughtSkinText = LocalizationManager.Localize("BoughtSkin");
     }
 
     private void SetColors()
@@ -74,15 +79,15 @@ public class BuyButton : MonoBehaviour
     {
         if(buttonImage.color == selectedButtonColor)
         {
-            buttonText.text = "picked";
+            buttonText.text = pickedSkinText;
         }
 
-        if(buttonImage.color == normalButtonColor && buttonText.text == "picked")
+        if(buttonImage.color == normalButtonColor && buttonText.text == pickedSkinText)
         {
-            buttonText.text = "bought";
+            buttonText.text = boughtSkinText;
         }  
 
-        if(buttonText.text == "bought")
+        if(buttonText.text == boughtSkinText)
         {
             buttonImage.color = boughtButtonColor;
         }
@@ -111,14 +116,14 @@ public class BuyButton : MonoBehaviour
             {
                 if(gameObject.name.Contains(skin.ToString()))
                 {
-                    buttonText.text = "bought";
+                    buttonText.text = boughtSkinText;
                     buttonImage.color = boughtButtonColor;
                 }
             }
 
             if(gameObject.name.Contains(ShopManager.selectedSkin.ToString()))
             {
-                buttonText.text = "picked";
+                buttonText.text = pickedSkinText;
                 buttonImage.color = selectedButtonColor;
             }
         }
@@ -208,7 +213,7 @@ public class BuyButton : MonoBehaviour
 
     private bool itemAlreadyBought()
     {
-        if(buttonText.text == "picked" || buttonText.text == "bought")
+        if(buttonText.text == pickedSkinText || buttonText.text == boughtSkinText)
         {
             return true;
         }
@@ -243,14 +248,14 @@ public class BuyButton : MonoBehaviour
     private void SetSelectedButtonColor()
     {
         buttonImage.color = selectedButtonColor;
-        buttonText.text = "picked";
+        buttonText.text = pickedSkinText;
     }
 
     private void SetSelectedSkin()
     {
         int selectedSkin;
 
-        if(buttonText.text == "picked")
+        if(buttonText.text == pickedSkinText)
         {
             int.TryParse(gameObject.name.Replace("Skin", "").Replace("BuyButton", ""), out selectedSkin);
             ShopManager.selectedSkin = selectedSkin;

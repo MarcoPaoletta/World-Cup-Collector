@@ -1076,6 +1076,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destinationSceneName: Shop
   uiSFX: {fileID: 8300000, guid: 0fe1a91ca04b30f408201e83327167ae, type: 3}
+--- !u!1 &925569841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 925569843}
+  - component: {fileID: 925569842}
+  m_Layer: 0
+  m_Name: MenuTranslatorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &925569842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925569841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595819f145029fa498937e90ed22e25a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &925569843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925569841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3224515, y: 0.5153212, z: 198.68282}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969107003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,8 +1958,9 @@ GameObject:
   - component: {fileID: 1679899704}
   - component: {fileID: 1679899703}
   - component: {fileID: 1679899702}
+  - component: {fileID: 1679899706}
   m_Layer: 5
-  m_Name: Text
+  m_Name: PlayButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1936,10 +1981,10 @@ RectTransform:
   m_Father: {fileID: 757834431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -30, y: -30}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
+  m_SizeDelta: {x: 388.2, y: 148.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679899702
 MonoBehaviour:
@@ -2004,7 +2049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.12
-  m_Text: PLAY
+  m_Text: play
 --- !u!222 &1679899705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2013,6 +2058,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679899700}
   m_CullTransparentMesh: 1
+--- !u!114 &1679899706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679899700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: PlayButtonText
 --- !u!1 &1797723204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +2139,67 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &1862805083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862805085}
+  - component: {fileID: 1862805084}
+  m_Layer: 0
+  m_Name: LocalizationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1862805084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862805083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50cf2546973275f4caa0511552ee3aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TableId: 1P8TMxIl0wrmloeeReDl5EgfXUAOp18fIu67-rxzhqLc
+  Sheets:
+  - Name: Menu
+    Id: 0
+  - Name: Main
+    Id: 1986500705
+  - Name: Shop
+    Id: 217028591
+  - Name: Settings
+    Id: 835448177
+  - Name: Inventory
+    Id: 68346698
+  - Name: Information
+    Id: 1132327983
+  - Name: Analytics
+    Id: 1745873119
+  SaveFolder: {fileID: 102900000, guid: a0508eba07424454ebfbf1c82a771b36, type: 3}
+--- !u!4 &1862805085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862805083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.73760533, y: -2.6705034, z: 123.27642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1864833272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,8 +2213,9 @@ GameObject:
   - component: {fileID: 1864833276}
   - component: {fileID: 1864833275}
   - component: {fileID: 1864833274}
+  - component: {fileID: 1864833278}
   m_Layer: 5
-  m_Name: Text
+  m_Name: SettingsButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2118,8 +2238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 560.6, y: 148.4}
+  m_AnchoredPosition: {x: 0, y: -0.0000019073486}
+  m_SizeDelta: {x: 560.6, y: 120.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864833274
 MonoBehaviour:
@@ -2193,6 +2313,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864833272}
   m_CullTransparentMesh: 1
+--- !u!114 &1864833278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864833272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: SettingsButtonText
 --- !u!1 &1867739265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,8 +2339,9 @@ GameObject:
   - component: {fileID: 1867739269}
   - component: {fileID: 1867739268}
   - component: {fileID: 1867739267}
+  - component: {fileID: 1867739271}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ShopButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2228,10 +2362,10 @@ RectTransform:
   m_Father: {fileID: 815595624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -30, y: -30}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000038146973, y: 0}
+  m_SizeDelta: {x: 491.9, y: 148.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867739267
 MonoBehaviour:
@@ -2296,7 +2430,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.12
-  m_Text: SHOP
+  m_Text: shop
 --- !u!222 &1867739270
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2305,6 +2439,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867739265}
   m_CullTransparentMesh: 1
+--- !u!114 &1867739271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867739265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: ShopButtonText
 --- !u!1 &1882668128
 GameObject:
   m_ObjectHideFlags: 0

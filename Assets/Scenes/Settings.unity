@@ -240,9 +240,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 48671351}
-        m_TargetAssemblyTypeName: SettingsButton, Assembly-CSharp
-        m_MethodName: OnSettingsButtonPressed
+      - m_Target: {fileID: 1170871333}
+        m_TargetAssemblyTypeName: LanguageChanger, Assembly-CSharp
+        m_MethodName: OnEnglishButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1170871333}
+        m_TargetAssemblyTypeName: LanguageChanger, Assembly-CSharp
+        m_MethodName: ResetCurrentScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -407,9 +419,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 80883957}
-        m_TargetAssemblyTypeName: SettingsButton, Assembly-CSharp
-        m_MethodName: OnSettingsButtonPressed
+      - m_Target: {fileID: 1170871333}
+        m_TargetAssemblyTypeName: LanguageChanger, Assembly-CSharp
+        m_MethodName: OnSpanishButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1170871333}
+        m_TargetAssemblyTypeName: LanguageChanger, Assembly-CSharp
+        m_MethodName: ResetCurrentScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -560,7 +584,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.12
-  m_Text: on
+  m_Text: On
 --- !u!222 &138932716
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -694,8 +718,9 @@ GameObject:
   - component: {fileID: 198554659}
   - component: {fileID: 198554658}
   - component: {fileID: 198554657}
+  - component: {fileID: 198554661}
   m_Layer: 5
-  m_Name: Title
+  m_Name: SettingsTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -793,6 +818,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198554655}
   m_CullTransparentMesh: 1
+--- !u!114 &198554661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198554655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: SettingsTitleText
 --- !u!1 &496745073
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +844,7 @@ GameObject:
   - component: {fileID: 496745077}
   - component: {fileID: 496745076}
   - component: {fileID: 496745075}
+  - component: {fileID: 496745079}
   m_Layer: 5
   m_Name: ParticlesText
   m_TagString: Untagged
@@ -905,6 +944,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496745073}
   m_CullTransparentMesh: 1
+--- !u!114 &496745079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496745073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: ParticlesText
 --- !u!1 &600147297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1170871331}
   - component: {fileID: 1170871332}
+  - component: {fileID: 1170871333}
   m_Layer: 5
   m_Name: LanguagesContainer
   m_TagString: Untagged
@@ -1427,6 +1480,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1170871333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170871330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a90433c67eb5f34ea952cfe9302c13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offButtonSprite: {fileID: 21300000, guid: 8cf3e2517fa2e9b49b0dc2a451b9287e, type: 3}
+  onButtonSprite: {fileID: 21300000, guid: 565b036ab869b7b4dab13fb22d99662d, type: 3}
+  spanishButtonImage: {fileID: 80883960}
+  englishButtonImage: {fileID: 48671354}
 --- !u!1 &1274599051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,6 +1509,7 @@ GameObject:
   - component: {fileID: 1274599055}
   - component: {fileID: 1274599054}
   - component: {fileID: 1274599053}
+  - component: {fileID: 1274599057}
   m_Layer: 5
   m_Name: MusicText
   m_TagString: Untagged
@@ -1539,6 +1609,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274599051}
   m_CullTransparentMesh: 1
+--- !u!114 &1274599057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274599051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: MusicText
 --- !u!1 &1461488685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1635,7 @@ GameObject:
   - component: {fileID: 1461488689}
   - component: {fileID: 1461488688}
   - component: {fileID: 1461488687}
+  - component: {fileID: 1461488691}
   m_Layer: 5
   m_Name: SpanishText
   m_TagString: Untagged
@@ -1576,8 +1660,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000014305115}
-  m_SizeDelta: {x: 493.6, y: 105.7}
+  m_AnchoredPosition: {x: 0.000006198883, y: -0.0000014305115}
+  m_SizeDelta: {x: 343.9, y: 105.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461488687
 MonoBehaviour:
@@ -1651,6 +1735,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461488685}
   m_CullTransparentMesh: 1
+--- !u!114 &1461488691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461488685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: SpanishText
 --- !u!1 &1503840731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1933,7 @@ GameObject:
   - component: {fileID: 1672760762}
   - component: {fileID: 1672760761}
   - component: {fileID: 1672760760}
+  - component: {fileID: 1672760764}
   m_Layer: 5
   m_Name: EnglishText
   m_TagString: Untagged
@@ -1935,6 +2033,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672760758}
   m_CullTransparentMesh: 1
+--- !u!114 &1672760764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672760758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: EnglishText
 --- !u!1 &1800549900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,7 +2491,6 @@ GameObject:
   - component: {fileID: 2078647271}
   - component: {fileID: 2078647270}
   - component: {fileID: 2078647269}
-  - component: {fileID: 2078647268}
   m_Layer: 5
   m_Name: SettingsCanvas
   m_TagString: Untagged
@@ -2388,27 +2498,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &2078647268
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078647267}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0fe525353cf2a44c9456c5b6fa5c0e4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2078647269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2505,6 +2594,7 @@ GameObject:
   - component: {fileID: 2135268122}
   - component: {fileID: 2135268121}
   - component: {fileID: 2135268120}
+  - component: {fileID: 2135268124}
   m_Layer: 5
   m_Name: LanguageText
   m_TagString: Untagged
@@ -2604,6 +2694,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135268118}
   m_CullTransparentMesh: 1
+--- !u!114 &2135268124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135268118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: LanguageText
 --- !u!1001 &117146045589050176
 PrefabInstance:
   m_ObjectHideFlags: 0
