@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class LanguageChanger : MonoBehaviour
 {
+    [SerializeField] private AudioClip uiSFX;
+
     [Header("Off / On button sprites")]
     [SerializeField] private Sprite offButtonSprite;
     [SerializeField] private Sprite onButtonSprite;
@@ -54,10 +56,19 @@ public class LanguageChanger : MonoBehaviour
         buttonImageToTurnOff.sprite = offButtonSprite;
         buttonImageToTurnOn.sprite = onButtonSprite;
         LocalizationManager.Language = PlayerPrefs.GetString("CurrentLanguage", "English");
+        UpdateSettingsButtonTexts();
     }
 
-    public void ResetCurrentScene()
+    private void UpdateSettingsButtonTexts()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        foreach (var updateSettingButtonScript in GameObject.FindObjectsOfType<SettingsButton>())
+        {
+            updateSettingButtonScript.UpdateSettingsButtonTexts();
+        }
+    }
+
+    public void PlayUiSFX()
+    {
+        AudioManager.instance.PlaySFX(uiSFX);
     }
 }

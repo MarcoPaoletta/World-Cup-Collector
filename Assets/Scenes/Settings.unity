@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f956118899daf4196d9adbd02773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSFX: {fileID: 8300000, guid: 0fe1a91ca04b30f408201e83327167ae, type: 3}
   buttonImage: {fileID: 48671354}
   buttonText: {fileID: 1672760762}
   offButtonSprite: {fileID: 21300000, guid: 8cf3e2517fa2e9b49b0dc2a451b9287e, type: 3}
@@ -254,7 +255,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1170871333}
         m_TargetAssemblyTypeName: LanguageChanger, Assembly-CSharp
-        m_MethodName: ResetCurrentScene
+        m_MethodName: PlayUiSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -356,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f956118899daf4196d9adbd02773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSFX: {fileID: 8300000, guid: 0fe1a91ca04b30f408201e83327167ae, type: 3}
   buttonImage: {fileID: 80883960}
   buttonText: {fileID: 1461488689}
   offButtonSprite: {fileID: 21300000, guid: 8cf3e2517fa2e9b49b0dc2a451b9287e, type: 3}
@@ -433,7 +435,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1170871333}
         m_TargetAssemblyTypeName: LanguageChanger, Assembly-CSharp
-        m_MethodName: ResetCurrentScene
+        m_MethodName: PlayUiSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -696,7 +698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.12
-  m_Text: on
+  m_Text: On
 --- !u!222 &142288549
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1120,6 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f956118899daf4196d9adbd02773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSFX: {fileID: 8300000, guid: 0fe1a91ca04b30f408201e83327167ae, type: 3}
   buttonImage: {fileID: 600147302}
   buttonText: {fileID: 138932715}
   offButtonSprite: {fileID: 21300000, guid: 8cf3e2517fa2e9b49b0dc2a451b9287e, type: 3}
@@ -1293,7 +1296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.12
-  m_Text: on
+  m_Text: On
 --- !u!222 &1144145446
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1492,6 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a90433c67eb5f34ea952cfe9302c13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSFX: {fileID: 8300000, guid: 0fe1a91ca04b30f408201e83327167ae, type: 3}
   offButtonSprite: {fileID: 21300000, guid: 8cf3e2517fa2e9b49b0dc2a451b9287e, type: 3}
   onButtonSprite: {fileID: 21300000, guid: 565b036ab869b7b4dab13fb22d99662d, type: 3}
   spanishButtonImage: {fileID: 80883960}
@@ -1911,6 +1915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f956118899daf4196d9adbd02773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSFX: {fileID: 8300000, guid: 0fe1a91ca04b30f408201e83327167ae, type: 3}
   buttonImage: {fileID: 1503840736}
   buttonText: {fileID: 1144145445}
   offButtonSprite: {fileID: 21300000, guid: 8cf3e2517fa2e9b49b0dc2a451b9287e, type: 3}
@@ -2475,6 +2480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f956118899daf4196d9adbd02773b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiSFX: {fileID: 8300000, guid: 0fe1a91ca04b30f408201e83327167ae, type: 3}
   buttonImage: {fileID: 2012934881}
   buttonText: {fileID: 142288548}
   offButtonSprite: {fileID: 21300000, guid: 8cf3e2517fa2e9b49b0dc2a451b9287e, type: 3}

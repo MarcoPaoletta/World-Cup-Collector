@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SettingsButton : MonoBehaviour
 {
+    [SerializeField] private AudioClip uiSFX;
+
     [Header("Components")]
     [SerializeField] private Image buttonImage;
     [SerializeField] private Text buttonText;
@@ -16,7 +18,7 @@ public class SettingsButton : MonoBehaviour
     private string onText;
     private string offText;
 
-    private void Start()
+    public void Start()
     {
         AssignVariables();
         LoadButtonsData();
@@ -44,7 +46,6 @@ public class SettingsButton : MonoBehaviour
 
     public void OnSettingsButtonPressed()
     {
-        
         if(buttonText.text == offText)
         {
             buttonImage.sprite = onButtonSprite;
@@ -57,6 +58,23 @@ public class SettingsButton : MonoBehaviour
             buttonImage.sprite = offButtonSprite;
             buttonText.text = offText;
             PlayerPrefs.SetString(gameObject.name.Replace("Button", "") + "Status", "Off");
+        }
+
+        AudioManager.instance.PlaySFX(uiSFX);
+    }
+
+    public void UpdateSettingsButtonTexts()
+    {
+        AssignVariables();
+
+        if(buttonImage.sprite == offButtonSprite && !gameObject.name.Contains("English") && !gameObject.name.Contains("Spanish"))
+        {
+            buttonText.text = offText;
+        }
+
+        if(buttonImage.sprite == onButtonSprite && !gameObject.name.Contains("English") && !gameObject.name.Contains("Spanish"))
+        {
+            buttonText.text = onText;
         }
     }
 }
