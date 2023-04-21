@@ -76,14 +76,35 @@ public class Player : MonoBehaviour
         gamePaused = false;
         dead = false;
         frozen = false;
-        particlesOn = PlayerPrefs.GetString("ParticlesStatus") == "On";
 
+        SetParticles();
         LoadData();
         SetSkin();
         SetSpeed();
         SetResistance();
         CheckBoosts();
         SetMinAndMaxPositions();
+    }
+
+    private void SetParticles()
+    {
+        if(PlayerPrefs.HasKey("ParticlesStatus"))
+        {
+            if(PlayerPrefs.GetString("ParticlesStatus") == "On")
+            {
+                particlesOn = true;
+            }
+
+            if(PlayerPrefs.GetString("ParticlesStatus") == "Off")
+            {
+                particlesOn = false;
+            }
+        }
+
+        else
+        {
+            particlesOn = true;
+        }
     }
 
     private void LoadData()
