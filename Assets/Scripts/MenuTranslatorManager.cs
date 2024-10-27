@@ -13,36 +13,18 @@ public class MenuTranslatorManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("CurrentLanguage"))
         {
+            SetCurrentLanguage();
             return;
-        }
-
-        string languageCode = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-
-        if (languageCode == "en" || languageCode == "es")
-        {
-            CultureInfo culture = CultureInfo.GetCultureInfo(languageCode);
-
-            if (culture.Name.StartsWith("en") || culture.Name.StartsWith("es"))
-            {
-                if (languageCode == "en")
-                {
-                    PlayerPrefs.SetString("CurrentLanguage", "English");
-                }
-                else if (languageCode == "es")
-                {
-                    PlayerPrefs.SetString("CurrentLanguage", "Spanish");
-                }
-            }
-            else
-            {
-                PlayerPrefs.SetString("CurrentLanguage", "English");
-            }
         }
         else
         {
-            PlayerPrefs.SetString("CurrentLanguage", "English");
+            PlayerPrefs.SetString("CurrentLanguage", "Spanish");
+            SetCurrentLanguage();
         }
+    }
 
+    private void SetCurrentLanguage()
+    {
         LocalizationManager.Language = PlayerPrefs.GetString("CurrentLanguage");
     }
 }

@@ -26,7 +26,7 @@ public class LanguageChanger : MonoBehaviour
 
     private void LoadCurrentLanguage()
     {
-        currentLanguage = PlayerPrefs.GetString("CurrentLanguage", "English");
+        currentLanguage = PlayerPrefs.GetString("CurrentLanguage", "Spanish");
 
         if(currentLanguage == "English")
         {
