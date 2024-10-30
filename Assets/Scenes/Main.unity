@@ -731,13 +731,14 @@ MonoBehaviour:
   movementSFX: {fileID: 8300000, guid: 3c876de6db9136441b39c6fe2c9e50c8, type: 3}
   scoreTextsCanvasScript: {fileID: 661866916}
   healthBarScript: {fileID: 392276479}
+  fillUpSunScript: {fileID: 392276480}
   confettiScript: {fileID: 2143657567}
   swipeListenerScript: {fileID: 183800775}
   trophiesSpawnerScript: {fileID: 1835269472}
   obstaclesSpawnerScript: {fileID: 450028541}
   snowExplosionScript: {fileID: 910005301}
   inventoryItemsSpawnerScript: {fileID: 1117861053}
-  pauseButtonCanvasScript: {fileID: 0}
+  pauseButtonCanvasScript: {fileID: 888019239}
 --- !u!61 &210433762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1001,6 +1002,7 @@ GameObject:
   - component: {fileID: 392276476}
   - component: {fileID: 392276478}
   - component: {fileID: 392276477}
+  - component: {fileID: 392276480}
   - component: {fileID: 392276479}
   m_Layer: 5
   m_Name: Sun
@@ -1081,6 +1083,18 @@ MonoBehaviour:
   health: 0
   sun: {fileID: 392276477}
   playerScript: {fileID: 210433761}
+--- !u!114 &392276480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392276475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7348b63ebb680fd4f997873777e267f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &450028539
 GameObject:
   m_ObjectHideFlags: 0

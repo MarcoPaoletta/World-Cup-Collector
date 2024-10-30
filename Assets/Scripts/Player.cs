@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     [Header("Scripts")]
     [SerializeField] private ScoreTextsCanvas scoreTextsCanvasScript;
     [SerializeField] private HealthBar healthBarScript;
+    [SerializeField] private FillUpSun fillUpSunScript;
     [SerializeField] private Confetti confettiScript;
     [SerializeField] private SwipeListener swipeListenerScript;
     [SerializeField] private TrophiesSpawner trophiesSpawnerScript;
@@ -298,7 +299,7 @@ public class Player : MonoBehaviour
             if(trophiesCollected == TrophiesSpawner.level || trophiesCollected == 30)
             {
                 trophiesCollected = 0;
-                healthBarScript.health = 100f;
+                fillUpSunScript.LevelCompleted();
                 TrophiesSpawner.level += 1;
                 scoreTextsCanvasScript.UpdateLevelText();
                 scoreTextsCanvasScript.LevelCompleted();
