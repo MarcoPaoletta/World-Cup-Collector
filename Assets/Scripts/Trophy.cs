@@ -14,7 +14,8 @@ public class Trophy : MonoBehaviour
     public void StartCollectedTrophyAnimation()
     {
         boxCollider.enabled = false;
-        animator.SetTrigger("Collected");
+        animator.StopPlayback();
+        animator.Play("Collected");
         spriteRenderer.sortingOrder = 1100;
     }
 } 
