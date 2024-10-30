@@ -5,13 +5,15 @@ using UnityEngine;
 public class FillUpSun : MonoBehaviour
 {
     private HealthBar healthBarScript;
+    private Animator animator;
 
-    private float healSpeed = 55f;
+    private float healSpeed = 80f;
     private bool shouldFillUpSun;
 
     private void Awake()
     {
         healthBarScript = GetComponent<HealthBar>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -32,5 +34,6 @@ public class FillUpSun : MonoBehaviour
     public void LevelCompleted()
     {
         shouldFillUpSun = true;
+        animator.SetTrigger("SunFillUp");
     }   
 }
