@@ -28,12 +28,13 @@ public class FillUpSun : MonoBehaviour
         if (healthBarScript.health >= 100f)
         {
             shouldFillUpSun = false;
+            animator.SetTrigger("SunFillUpOut");     
         }
     }
 
     public void LevelCompleted()
     {
         shouldFillUpSun = true;
-        animator.SetTrigger("SunFillUp");
+        animator.SetTrigger("SunFillUpIn");
     }   
 }
