@@ -3562,13 +3562,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274704706}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19078706, y: -0.50602037, z: -0.8346617, w: 0.104324244}
-  m_LocalPosition: {x: 2.54, y: -5.5, z: 2.16}
+  m_LocalRotation: {x: -0.036316626, y: -0.4605308, z: -0.8554186, w: 0.23420405}
+  m_LocalPosition: {x: 1.48, y: -6.36, z: 2.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2143657566}
-  m_LocalEulerAnglesHint: {x: -53.601, y: -45.613, z: -141.767}
+  m_LocalEulerAnglesHint: {x: -53.601, y: -15, z: -141.767}
 --- !u!199 &1274704708
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -3833,7 +3833,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.13333334, g: 0.3764706, b: 0.5882353, a: 1}
+      maxColor: {r: 0.92549026, g: 0.5529412, b: 0.1137255, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0, b: 0, a: 1}
@@ -4275,7 +4275,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
@@ -9305,13 +9305,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001179270}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.4630203, y: -0.2794051, z: -0.720191, w: 0.43459177}
-  m_LocalPosition: {x: -2.53, y: -5.5, z: 2.16}
+  m_LocalRotation: {x: -0.2564778, y: -0.3842221, z: -0.81687146, w: 0.3454179}
+  m_LocalPosition: {x: -1.72, y: -6.36, z: 2.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2143657566}
-  m_LocalEulerAnglesHint: {x: -53.601, y: 45.613, z: -141.767}
+  m_LocalEulerAnglesHint: {x: -53.601, y: 15, z: -141.767}
 --- !u!199 &2001179272
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9576,7 +9576,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.45882356, g: 0.68235296, b: 0.87843144, a: 1}
+      maxColor: {r: 0.92549026, g: 0.83921576, b: 0.21568629, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0, b: 0, a: 1}
@@ -10018,7 +10018,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
