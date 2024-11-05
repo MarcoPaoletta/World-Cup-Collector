@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraBackgroundColorChanger : MonoBehaviour
 {
-    [SerializeField] private Color lightBlueColor;
+    [SerializeField] private Color cameraBackgroundColor;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class CameraBackgroundColorChanger : MonoBehaviour
         }
         else
         {
-            Camera.main.backgroundColor = lightBlueColor;
+            Camera.main.backgroundColor = cameraBackgroundColor;
         }
     }
 }
