@@ -316,7 +316,7 @@ public class Player : MonoBehaviour
 
                 if(obstaclesOn == true)
                 {
-                    obstaclesSpawnerScript.SpawnObstacles();
+                    obstaclesSpawnerScript.TrySpawnObstacles();
                 }
 
                 if(particlesOn)

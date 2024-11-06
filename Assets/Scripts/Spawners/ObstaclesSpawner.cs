@@ -12,7 +12,7 @@ public class ObstaclesSpawner : MonoBehaviour
     [SerializeField] private GameObject ice;
     [SerializeField] private GameObject francePlayer;
 
-    private int obstaclesAmountToInstantiate = 1;
+    private int obstaclesAmountToInstantiateWhenCleanedUp = 5;
     private int randomObstacleIndex;
     private int lastRandomObstacleIndex;
     private bool mudAvailable = true;
@@ -25,17 +25,67 @@ public class ObstaclesSpawner : MonoBehaviour
         obstaclesAvailableList.Add(mud);
     }
 
-    public void SpawnObstacles()
+    public void TrySpawnObstacles()
     {
-        if (TrophiesSpawner.level % 2 != 0)
+        CheckObstaclesAvailability();
+        
+        if (TrophiesSpawner.level >= 10)
         {
-            return;
+            if (TrophiesSpawner.level % 4 == 0 || TrophiesSpawner.level == 10)
+            {
+                DestroyObstacles();
+                for (int i = 0; i < obstaclesAmountToInstantiateWhenCleanedUp; i++)
+                {
+                    SpawnObstacles();
+                }
+            }
+        }
+        else if (TrophiesSpawner.level % 2 == 0)
+        {
+            SpawnObstacles();
+        }
+    }
+
+    public void DestroyObstacles()
+    {
+        GameObject[] muds = GameObject.FindGameObjectsWithTag("Mud");
+        GameObject[] ices = GameObject.FindGameObjectsWithTag("Ice");
+        GameObject[] francePlayers = GameObject.FindGameObjectsWithTag("FrancePlayer");
+        
+        foreach(var mud in muds)
+        {
+            Destroy(mud);
         }
 
-        //DestroyObstacles();
-        CheckObstaclesAvailability();
+        foreach(var ice in ices)
+        {
+            Destroy(ice);
+        }
 
-        for(int i = 0; i < obstaclesAmountToInstantiate; i++)
+        foreach(var francePlayer in francePlayers)
+        {
+            Destroy(francePlayer);
+        }
+    }
+
+    private void CheckObstaclesAvailability()
+    {
+        if (TrophiesSpawner.level == 6)
+        {
+            iceAvailable = true;
+            obstaclesAvailableList.Add(ice);
+        }
+
+        if (TrophiesSpawner.level == 12)
+        {
+            francePlayerAvailable = true;
+            obstaclesAvailableList.Add(francePlayer);
+        }
+    }
+
+    private void SpawnObstacles()
+    {
+        for(int i = 0; i < 1; i++)
         {
             SetRandomPosition();
 
@@ -77,48 +127,11 @@ public class ObstaclesSpawner : MonoBehaviour
         }
     }
 
-    public void DestroyObstacles()
-    {
-        GameObject[] muds = GameObject.FindGameObjectsWithTag("Mud");
-        GameObject[] ices = GameObject.FindGameObjectsWithTag("Ice");
-        GameObject[] francePlayers = GameObject.FindGameObjectsWithTag("FrancePlayer");
-        
-        foreach(var mud in muds)
-        {
-            Destroy(mud);
-        }
-
-        foreach(var ice in ices)
-        {
-            Destroy(ice);
-        }
-
-        foreach(var francePlayer in francePlayers)
-        {
-            Destroy(francePlayer);
-        }
-    }
-
     private void SetRandomPosition()
     {
         float randomX = Random.Range(-2f, 2f);
         float randomY = Random.Range(-3.5f, 3.5f);
         obstaclePosition = new Vector3(randomX, randomY, 0);
-    }
-
-    private void CheckObstaclesAvailability()
-    {
-        if (TrophiesSpawner.level == 6)
-        {
-            iceAvailable = true;
-            obstaclesAvailableList.Add(ice);
-        }
-
-        if (TrophiesSpawner.level == 12)
-        {
-            francePlayerAvailable = true;
-            obstaclesAvailableList.Add(francePlayer);
-        }
     }
 
     private void SetFrancePlayerState()
