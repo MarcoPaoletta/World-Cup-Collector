@@ -11,12 +11,17 @@ public class ObstaclesSpawner : MonoBehaviour
     [SerializeField] private GameObject francePlayer;
 
     private int obstaclesAmountToInstantiate;
-    private bool mudAvailable;
+    private bool mudAvailable = true;
     private bool iceAvailable;
     private bool francePlayerAvailable;
 
     public void SpawnObstacles()
     {
+        if (TrophiesSpawner.level % 3 != 0)
+        {
+            return;
+        }
+
         DestroyObstacles();
         CheckObstaclesAvailability();
         SetObstaclesAmountToInstantiate();
@@ -96,7 +101,6 @@ public class ObstaclesSpawner : MonoBehaviour
 
     private void CheckObstaclesAvailability()
     {
-        mudAvailable = TrophiesSpawner.level >= 5;
         iceAvailable = TrophiesSpawner.level >= 10;
         francePlayerAvailable = TrophiesSpawner.level >= 15;
     }
