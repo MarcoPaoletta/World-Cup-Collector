@@ -57,8 +57,9 @@ public class Player : MonoBehaviour
     private bool particlesOn;
     private int trophiesCollected;
     private int trophiesMultiplier;
-    private float scaleValue = 2.884061f;
+    private float scaleValue;
     private float resistance;
+    private float mudStrength = 7.5f;
     private float verticalMovement;
     private float horizontalMovement;
     private float minPositionX;
@@ -66,7 +67,6 @@ public class Player : MonoBehaviour
     private float minPositionY;
     private float maxPositionY;
     private float spriteXDifference = 0.05956841f;
-    private float spriteYDifference = 0.0346145f;
 
     #region Start
 
@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
     {
         swipeListenerScript.OnSwipe.AddListener(OnSwipe);
         speed = 3.75f;
+        scaleValue = transform.localScale.x;
         gamePaused = false;
         dead = false;
         frozen = false;
@@ -182,8 +183,10 @@ public class Player : MonoBehaviour
     {
         minPositionX = fitToThis.transform.localScale.x / -2 + spriteRenderer.size.x + spriteXDifference;
         maxPositionX = fitToThis.transform.localScale.x / 2 - spriteRenderer.size.x - spriteXDifference;
-        minPositionY = fitToThis.transform.localScale.y / -2 + spriteRenderer.size.y + spriteYDifference;
-        maxPositionY = fitToThis.transform.localScale.y / 2 - spriteRenderer.size.y - spriteYDifference;
+
+        float yOffset = 3.8f;
+        minPositionY = -yOffset;
+        maxPositionY = yOffset;
     }
 
     #endregion
@@ -329,7 +332,7 @@ public class Player : MonoBehaviour
 
         if(other.CompareTag("Mud"))
         {
-            speed /= 2 - resistance;
+            speed /= mudStrength - resistance;
             Color muddyColor;
             ColorUtility.TryParseHtmlString("#8F563B", out muddyColor);
             spriteRenderer.color = muddyColor;
@@ -376,7 +379,7 @@ public class Player : MonoBehaviour
     {
         if(other.CompareTag("Mud"))
         {
-            speed *= 2 - resistance;
+            speed *= mudStrength - resistance;
             spriteRenderer.color = Color.white;
         }
     }
