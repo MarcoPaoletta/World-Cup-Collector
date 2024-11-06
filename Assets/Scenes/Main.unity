@@ -3563,7 +3563,7 @@ Transform:
   m_GameObject: {fileID: 1274704706}
   serializedVersion: 2
   m_LocalRotation: {x: -0.036316626, y: -0.4605308, z: -0.8554186, w: 0.23420405}
-  m_LocalPosition: {x: 1.48, y: -6.36, z: 2.16}
+  m_LocalPosition: {x: 1.48, y: -6.27, z: 4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3590,7 +3590,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cbefedd57f5924946bdef5a360b8e941, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3610,7 +3610,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -3833,7 +3833,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.92549026, g: 0.5529412, b: 0.1137255, a: 1}
+      maxColor: {r: 0.92, g: 0.83, b: 0.21, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0, b: 0, a: 1}
@@ -9306,7 +9306,7 @@ Transform:
   m_GameObject: {fileID: 2001179270}
   serializedVersion: 2
   m_LocalRotation: {x: -0.2564778, y: -0.3842221, z: -0.81687146, w: 0.3454179}
-  m_LocalPosition: {x: -1.72, y: -6.36, z: 2.16}
+  m_LocalPosition: {x: -1.72, y: -6.27, z: 4.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9333,7 +9333,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cbefedd57f5924946bdef5a360b8e941, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9353,7 +9353,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9576,7 +9576,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.92549026, g: 0.83921576, b: 0.21568629, a: 1}
+      maxColor: {r: 0.92, g: 0.55, b: 0.11, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0, b: 0, a: 1}
@@ -14703,6 +14703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FitToThis
       objectReference: {fileID: 0}
+    - target: {fileID: 4273402283968598519, guid: aca528600c953864c9332132796a19de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14810,14 +14814,14 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 4273402282558970825}
     m_ColliderPaths:
-    - - X: -25000000
+    - - X: 25000000
+        Y: 50000000
+      - X: -25000000
         Y: 50000000
       - X: -25000000
         Y: -50000000
       - X: 25000000
         Y: -50000000
-      - X: 25000000
-        Y: 50000000
   m_CompositePaths:
     m_Paths:
     - - {x: 2.499971, y: -5}
@@ -14860,13 +14864,13 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1372176896613513067}
+  - {fileID: 2143657566}
   - {fileID: 4273402282558970823}
   - {fileID: 512974620}
   - {fileID: 1304893625}
   - {fileID: 210433759}
   - {fileID: 1661991971}
   - {fileID: 183800776}
-  - {fileID: 2143657566}
   - {fileID: 910005302}
   - {fileID: 239345598}
   - {fileID: 1813683204}
