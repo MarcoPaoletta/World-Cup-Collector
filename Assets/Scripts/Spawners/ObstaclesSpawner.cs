@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstaclesSpawner : MonoBehaviour
@@ -10,63 +12,68 @@ public class ObstaclesSpawner : MonoBehaviour
     [SerializeField] private GameObject ice;
     [SerializeField] private GameObject francePlayer;
 
-    private int obstaclesAmountToInstantiate;
+    private int obstaclesAmountToInstantiate = 1;
+    private int randomObstacleIndex;
+    private int lastRandomObstacleIndex;
     private bool mudAvailable = true;
     private bool iceAvailable;
     private bool francePlayerAvailable;
+    private List<GameObject> obstaclesAvailableList = new List<GameObject>();
+
+    private void Start()
+    {
+        obstaclesAvailableList.Add(mud);
+    }
 
     public void SpawnObstacles()
     {
-        if (TrophiesSpawner.level % 3 != 0)
+        if (TrophiesSpawner.level % 2 != 0)
         {
             return;
         }
 
-        DestroyObstacles();
+        //DestroyObstacles();
         CheckObstaclesAvailability();
-        SetObstaclesAmountToInstantiate();
 
         for(int i = 0; i < obstaclesAmountToInstantiate; i++)
         {
             SetRandomPosition();
+
             Collider2D[] colliders = Physics2D.OverlapCircleAll(obstaclePosition, .4f);
-            
             if(colliders.Length < 1)
             {
-                if(obstaclesAmountToInstantiate == 1)
+                if (obstaclesAvailableList.Count > 1)
                 {
-                    Instantiate(mud, obstaclePosition, Quaternion.identity);
+                    do
+                    {
+                        randomObstacleIndex = Random.Range(0, obstaclesAvailableList.Count);
+                    } while (lastRandomObstacleIndex == randomObstacleIndex);
+                }
+                else
+                {
+                    randomObstacleIndex = 0; 
                 }
 
-                if(obstaclesAmountToInstantiate != 1)
+                if(randomObstacleIndex == 2 && GameObject.FindGameObjectsWithTag("FrancePlayer").Length == 0)
                 {
-                    int randomObstacle = Random.Range(1, obstaclesAmountToInstantiate + 1);
-
-                    if(randomObstacle == 1)
-                    {
-                        Instantiate(mud, obstaclePosition, Quaternion.identity);
-                    }
-
-                    if(randomObstacle == 2)
-                    {
-                        Instantiate(ice, obstaclePosition, Quaternion.identity);
-                    }
-
-                    if(randomObstacle == 3 && GameObject.FindGameObjectsWithTag("FrancePlayer").Length == 0)
-                    {
-                        Instantiate(francePlayer, obstaclePosition, Quaternion.identity); 
-                        SetFrancePlayerState();
-                    }
-                    else if(randomObstacle == 3 && GameObject.FindGameObjectsWithTag("FrancePlayer").Length >= 1)
-                    {
-                        Instantiate(ice, obstaclePosition, Quaternion.identity);
-                    }
+                    Instantiate(francePlayer, obstaclePosition, Quaternion.identity); 
+                    SetFrancePlayerState();
+                }
+                else if(randomObstacleIndex == 2 && GameObject.FindGameObjectsWithTag("FrancePlayer").Length >= 1)
+                {
+                    Instantiate(ice, obstaclePosition, Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(obstaclesAvailableList[randomObstacleIndex], obstaclePosition, Quaternion.identity);
                 }
             }
             else
             {
                 i-= 1;
             }
+
+            lastRandomObstacleIndex = randomObstacleIndex;
         }
     }
 
@@ -101,15 +108,17 @@ public class ObstaclesSpawner : MonoBehaviour
 
     private void CheckObstaclesAvailability()
     {
-        iceAvailable = TrophiesSpawner.level >= 10;
-        francePlayerAvailable = TrophiesSpawner.level >= 15;
-    }
+        if (TrophiesSpawner.level == 6)
+        {
+            iceAvailable = true;
+            obstaclesAvailableList.Add(ice);
+        }
 
-    private void SetObstaclesAmountToInstantiate()
-    {
-        obstaclesAmountToInstantiate = mudAvailable ? 1 : obstaclesAmountToInstantiate;
-        obstaclesAmountToInstantiate = iceAvailable ? 2 : obstaclesAmountToInstantiate;
-        obstaclesAmountToInstantiate = francePlayerAvailable ? 3 : obstaclesAmountToInstantiate;
+        if (TrophiesSpawner.level == 12)
+        {
+            francePlayerAvailable = true;
+            obstaclesAvailableList.Add(francePlayer);
+        }
     }
 
     private void SetFrancePlayerState()
