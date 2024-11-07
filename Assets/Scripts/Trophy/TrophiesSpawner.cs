@@ -16,9 +16,9 @@ public class TrophiesSpawner : MonoBehaviour
 
     public void SpawnTrophies()
     {
-        if(level >= 30)
+        if(level >= 24)
         {
-            trophiesAmountToInstantiate = 30;
+            trophiesAmountToInstantiate = 24;
         }
         else
         {

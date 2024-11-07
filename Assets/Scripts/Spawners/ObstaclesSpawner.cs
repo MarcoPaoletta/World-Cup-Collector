@@ -31,7 +31,7 @@ public class ObstaclesSpawner : MonoBehaviour
         
         if (TrophiesSpawner.level >= 10)
         {
-            if (TrophiesSpawner.level % 4 == 0 || TrophiesSpawner.level == 10)
+            if (TrophiesSpawner.level % 3 == 0 || TrophiesSpawner.level == 10)
             {
                 DestroyObstacles();
                 for (int i = 0; i < obstaclesAmountToInstantiateWhenCleanedUp; i++)
@@ -136,6 +136,6 @@ public class ObstaclesSpawner : MonoBehaviour
 
     private void SetFrancePlayerState()
     {
-        francePlayerState = TrophiesSpawner.level >= 20 ? "Walk" : "Idle";
+        francePlayerState = TrophiesSpawner.level >= 15 ? "Walk" : "Idle";
     }
 }
